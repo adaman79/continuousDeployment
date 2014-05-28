@@ -4,6 +4,22 @@
 	<groupId>TennisKata</groupId>
 	<artifactId>TennisKata</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<scm>
+		<connection>scm:git:git@github.com:adaman79/continuousDeployment.git</connection>
+	</scm>
+	<!-- Artifactory server repos -->
+	<distributionManagement>
+		<repository>
+			<id>ciserver</id>
+			<name>ciserver-releases</name>
+			<url>http://10.0.1.14:8081/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>ciserver</id>
+			<name>ciserver-snapshots</name>
+			<url>http://10.0.1.14:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -26,6 +42,18 @@
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>versions-maven-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9</version>
+				<configuration>
+					<tag>${project.artifactId}-${project.version}</tag>
+				</configuration>
+			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>

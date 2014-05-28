@@ -25,7 +25,8 @@ public class TennisGameTest {
 	@Test
 	public void testPlayerAScores() {
 		game.playerA.winner();
-		assertThat(game, hasProperty("score", is("fifteen, love")));
+		assertThat(game, hasProperty("score"));
+		assertThat(game.getScore(), is("fifteen, love"));
 	}
 	
 	@Test
@@ -36,7 +37,8 @@ public class TennisGameTest {
 		game.playerB.winner();
 		game.playerB.winner();
 		game.playerB.winner();
-		assertThat(game, hasProperty("score", is("deuce")));
+		assertThat(game, hasProperty("score"));
+		assertThat(game.getScore(), is("deuce"));
 	}
 	
 	@Test
@@ -48,7 +50,8 @@ public class TennisGameTest {
 		game.playerB.winner();
 		game.playerB.winner();
 		game.playerA.winner();
-		assertThat(game, hasProperty("score", is("advantage, Andi")));
+		assertThat(game, hasProperty("score"));
+		assertThat(game.getScore(), is("advantage, Andi"));
 	}
 	
 	@Test
@@ -60,7 +63,8 @@ public class TennisGameTest {
 		game.playerB.winner();
 		game.playerB.winner();
 		game.playerB.winner();
-		assertThat(game, hasProperty("score", is("advantage, Roger")));
+		assertThat(game, hasProperty("score"));
+		assertThat(game.getScore(), is("advantage, Roger"));
 	}
 	
 	@Test
@@ -73,7 +77,8 @@ public class TennisGameTest {
 		game.playerB.winner();
 		game.playerA.winner();
 		game.playerA.winner();
-		assertThat(game, hasProperty("score", is("Andi won")));
+		assertThat(game, hasProperty("score"));
+		assertThat(game.getScore(), is("Andi won"));
 	}
 	
 	@Test
@@ -82,7 +87,8 @@ public class TennisGameTest {
 		game.playerA.winner();
 		game.playerA.winner();
 		game.playerA.winner();
-		assertThat(game, hasProperty("score", is("Andi won")));
+		assertThat(game, hasProperty("score"));
+		assertThat(game.getScore(), is("Andi won"));
 	}
 	
 	@Test
@@ -91,7 +97,8 @@ public class TennisGameTest {
 		game.playerB.winner();
 		game.playerB.winner();
 		game.playerB.winner();
-		assertThat(game, hasProperty("score", is("Roger won")));
+		assertThat(game, hasProperty("score"));
+		assertThat(game.getScore(), is("Roger won"));
 	}
 	
 	@Test
@@ -101,7 +108,8 @@ public class TennisGameTest {
 		game.playerA.winner();
 		game.playerA.winner();
 		game.playerB.winner();
-		assertThat(game, hasProperty("score", is("forty, thirty")));
+		assertThat(game, hasProperty("score"));
+		assertThat(game.getScore(), is("forty, thirty"));
 		
 	}
 	

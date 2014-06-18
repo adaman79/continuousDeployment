@@ -15,6 +15,12 @@ node "tomcat.cc.de" {
 	exec { "apt-update":
 		command	=> "/usr/bin/apt-get update",
 	}
+
+#        tomcat::war {'deploy':
+#          source => '../target/',
+#          staging => true,
+#          warfile => '../target/TennisKata-0.0.1-SNAPSHOT.jar',
+#        }
 }
 
 #class { '::mysql::server':
